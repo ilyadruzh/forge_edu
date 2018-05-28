@@ -84,20 +84,20 @@ func recursiveFunc(format bytes.Buffer, father string, son string, printFiles bo
 	}
 	if err == nil && printFiles == false {
 		for i := 0; i < len(items); i++ {
-
-			// если не последняя папка
-			if items[i].IsDir() && len(items)-1 != i {
-				fmt.Printf("|%s├───%s\n", buffer.String(), items[i].Name())
-				// buffer.WriteString("  ")
-				recursiveFunc(buffer, fullpath, items[i].Name(), false)
-			}
-
 			// если последняя папка в папке
 			if items[i].IsDir() && len(items)-1 == i {
 				fmt.Printf("|%s└───%s \n", buffer.String(), items[i].Name())
 				buffer.WriteString("  ")
 				recursiveFunc(buffer, fullpath, items[i].Name(), false)
+			} else {
+				// если не последняя папка
+				if items[i].IsDir() && len(items)-1 != i {
+					fmt.Printf("|%s├───%s\n", buffer.String(), items[i].Name())
+					// buffer.WriteString("  ")
+					recursiveFunc(buffer, fullpath, items[i].Name(), false)
+				}
 			}
+
 		}
 	}
 }
