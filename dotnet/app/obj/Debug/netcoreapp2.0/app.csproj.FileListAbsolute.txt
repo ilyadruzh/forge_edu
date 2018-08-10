@@ -1,0 +1,10 @@
+/Users/irina/Documents/Ilya/dotnet/app/bin/Debug/netcoreapp2.0/app.deps.json
+/Users/irina/Documents/Ilya/dotnet/app/bin/Debug/netcoreapp2.0/app.runtimeconfig.json
+/Users/irina/Documents/Ilya/dotnet/app/bin/Debug/netcoreapp2.0/app.runtimeconfig.dev.json
+/Users/irina/Documents/Ilya/dotnet/app/bin/Debug/netcoreapp2.0/app.dll
+/Users/irina/Documents/Ilya/dotnet/app/bin/Debug/netcoreapp2.0/app.pdb
+/Users/irina/Documents/Ilya/dotnet/app/obj/Debug/netcoreapp2.0/app.csproj.CoreCompileInputs.cache
+/Users/irina/Documents/Ilya/dotnet/app/obj/Debug/netcoreapp2.0/app.AssemblyInfoInputs.cache
+/Users/irina/Documents/Ilya/dotnet/app/obj/Debug/netcoreapp2.0/app.AssemblyInfo.cs
+/Users/irina/Documents/Ilya/dotnet/app/obj/Debug/netcoreapp2.0/app.dll
+/Users/irina/Documents/Ilya/dotnet/app/obj/Debug/netcoreapp2.0/app.pdb
