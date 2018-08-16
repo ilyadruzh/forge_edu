@@ -664,23 +664,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/irina/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/home/ilyadruzh/.nuget/packages/": {},
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/irina/Documents/Ilya/dotnet/app/app.csproj",
+      "projectUniqueName": "/home/ilyadruzh/Documents/sandbox_edu/dotnet/app/app.csproj",
       "projectName": "app",
-      "projectPath": "/Users/irina/Documents/Ilya/dotnet/app/app.csproj",
-      "packagesPath": "/Users/irina/.nuget/packages/",
-      "outputPath": "/Users/irina/Documents/Ilya/dotnet/app/obj/",
+      "projectPath": "/home/ilyadruzh/Documents/sandbox_edu/dotnet/app/app.csproj",
+      "packagesPath": "/home/ilyadruzh/.nuget/packages/",
+      "outputPath": "/home/ilyadruzh/Documents/sandbox_edu/dotnet/app/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/irina/.nuget/NuGet/NuGet.Config"
+        "/home/ilyadruzh/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -704,7 +704,7 @@
         "dependencies": {
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "2.0.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           }
         },
