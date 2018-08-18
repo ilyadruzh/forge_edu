@@ -3,3 +3,4 @@ target
 .vscode
 *.out
 c/math-func/bin
+*.jar

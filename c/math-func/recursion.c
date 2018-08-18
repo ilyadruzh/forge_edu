@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-
-// выполнить программу 
+// выполнить программу
 // cc recursion.c -o bin/recursion && ./bin/recursion
 
 int rec(int a)
@@ -15,6 +14,7 @@ int rec(int a)
     }
 }
 
-int main(){
+int main()
+{
     rec(1);
 }
