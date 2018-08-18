@@ -1,4 +1,4 @@
-?- write('Hello world!'), nl.
+?- write('HelloWwwwworld!'), nl.
 Hello world!
 true.
  
