@@ -20,3 +20,5 @@ Don't forget to add /usr/local/mercury-rotd-2018-08-15/bin to your PATH,
 		"/usr/local/mercury-rotd-2018-08-15/lib/mercury/elisp")
 	(autoload 'mdb "gud" "Invoke the Mercury debugger" t)
 
+
+Установил flex и bison дополнительно. Что это за программы?
