@@ -9,3 +9,7 @@
 ## Компиляция библиотеки
 
     kotlinc {filename}.kt -d bin/{filename}.jar
+
+## Links
+
+https://kotlinlang.org/docs/tutorials/command-line.html

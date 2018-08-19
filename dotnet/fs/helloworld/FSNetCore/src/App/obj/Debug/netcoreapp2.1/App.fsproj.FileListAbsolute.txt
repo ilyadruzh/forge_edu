@@ -1,0 +1,13 @@
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/bin/Debug/netcoreapp2.1/App.deps.json
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/bin/Debug/netcoreapp2.1/App.runtimeconfig.json
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/bin/Debug/netcoreapp2.1/App.runtimeconfig.dev.json
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/bin/Debug/netcoreapp2.1/App.dll
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/bin/Debug/netcoreapp2.1/App.pdb
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/bin/Debug/netcoreapp2.1/Library.dll
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/bin/Debug/netcoreapp2.1/Library.pdb
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/obj/Debug/netcoreapp2.1/App.fsprojAssemblyReference.cache
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/obj/Debug/netcoreapp2.1/App.AssemblyInfoInputs.cache
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/obj/Debug/netcoreapp2.1/App.AssemblyInfo.fs
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/obj/Debug/netcoreapp2.1/App.fsproj.CopyComplete
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/obj/Debug/netcoreapp2.1/App.dll
+/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/App/obj/Debug/netcoreapp2.1/App.pdb
