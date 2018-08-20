@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "mathfunc.h"
+#include "mathbasic.h"
 
 int sum(int a, int b)
 {

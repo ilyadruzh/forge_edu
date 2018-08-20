@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "mathfunc.h"
+#include "mathbasic.h"
 
 extern int sum(int a, int b);
 
