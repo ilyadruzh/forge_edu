@@ -2,7 +2,7 @@
 
 ### Компилирование
 
-    mmc hello-world.m
+    /usr/local/mercury-14.01.1/bin/mmc hello-world.m
 
 ### Запуск
 
