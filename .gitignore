@@ -4,3 +4,5 @@ target
 *.out
 c/math-func/bin
 *.jar
+/obj/
+/bin/
