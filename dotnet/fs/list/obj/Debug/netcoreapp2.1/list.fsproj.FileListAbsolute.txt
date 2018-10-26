@@ -1,0 +1,10 @@
+/Users/irina/Documents/ilyadev/sandbox_edu/dotnet/fs/list/bin/Debug/netcoreapp2.1/list.deps.json
+/Users/irina/Documents/ilyadev/sandbox_edu/dotnet/fs/list/bin/Debug/netcoreapp2.1/list.runtimeconfig.json
+/Users/irina/Documents/ilyadev/sandbox_edu/dotnet/fs/list/bin/Debug/netcoreapp2.1/list.runtimeconfig.dev.json
+/Users/irina/Documents/ilyadev/sandbox_edu/dotnet/fs/list/bin/Debug/netcoreapp2.1/list.dll
+/Users/irina/Documents/ilyadev/sandbox_edu/dotnet/fs/list/bin/Debug/netcoreapp2.1/list.pdb
+/Users/irina/Documents/ilyadev/sandbox_edu/dotnet/fs/list/obj/Debug/netcoreapp2.1/list.fsprojAssemblyReference.cache
+/Users/irina/Documents/ilyadev/sandbox_edu/dotnet/fs/list/obj/Debug/netcoreapp2.1/list.AssemblyInfoInputs.cache
+/Users/irina/Documents/ilyadev/sandbox_edu/dotnet/fs/list/obj/Debug/netcoreapp2.1/list.AssemblyInfo.fs
+/Users/irina/Documents/ilyadev/sandbox_edu/dotnet/fs/list/obj/Debug/netcoreapp2.1/list.dll
+/Users/irina/Documents/ilyadev/sandbox_edu/dotnet/fs/list/obj/Debug/netcoreapp2.1/list.pdb
