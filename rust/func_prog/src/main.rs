@@ -41,7 +41,7 @@ fn sum_from_to_v2(from: i32, to: i32) -> i32 {
 }
 
 fn generate_workout(intensity: i32, random_number: i32) {
-    let expensive_closure = |num| {
+    let expensive_closure = |num: i32| -> i32 {
         println!("calculating slowly...");
         thread::sleep(Duration::from_secs(2));
         num
