@@ -16,3 +16,7 @@ void qsort(int *ds, int *de, int *ss){
     qsort(ds, ds + (inl - ss), ss);
     qsort(ds + (inl - ss), de, inl + 1);
 }
+
+## Ряд тейлора
+
+числа фибоначи
