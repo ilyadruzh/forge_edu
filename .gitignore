@@ -6,3 +6,5 @@ c/math-func/bin
 *.jar
 /obj/
 /bin/
+*.fas
+*.lib
