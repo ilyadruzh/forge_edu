@@ -8,3 +8,4 @@ c/math-func/bin
 /bin/
 *.fas
 *.lib
+/Debug/
