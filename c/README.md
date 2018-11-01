@@ -1,7 +1,11 @@
-## Compile
+## Compile C
 
     gcc {filename}.c -o bin/{filename} - компиляция. `-o` - говорит как назвать файл после компиляции
     cc {filename}.c -o bin/{filename} - компиляция
+
+## Compile CPP
+
+    g++ {filename}
 
 ## Описание
 
