@@ -3,8 +3,8 @@ target
 .vscode
 *.out
 *.jar
-/obj/
-/bin/
+obj/
+bin/
 *.fas
 *.lib
 /Debug/
