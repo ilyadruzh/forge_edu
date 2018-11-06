@@ -21,47 +21,57 @@ fn find_sqaure(stdin: io::Stdin) -> u32 {
     let mut gcd_var = 0;
 
     let mut a_var = 0;
+    let mut a_simple = 0;
     let mut b_var = 0;
+    let mut b_simple = 0;
 
     let mut anum = 0;
 
     match input.trim() {
         input => {
             if let Ok(mut numbers) = parse_input(input) {
-                a_var = nod(numbers[0]);
-                b_var = nod(numbers[1]);
-                num_src = numbers[0] * numbers[1];
-                gcd_var = gcd1(numbers[0], numbers[1]);
-                println!("gcd: {}", gcd_var);
+                a_var = numbers[0];
+                b_var = numbers[1];
 
-                if (numbers[0] != numbers[1]) {
-                    while numbers[1] != 0 {
-                        let tmp = numbers[0];
-                        numbers[0] = numbers[1];
-                        numbers[1] = tmp % numbers[1];
-                    }
+                // раскладываем все числа на простые множетели
+                
 
-                    println!("num[0]: {}", numbers[0]);
+                // берем меньший, но не 1
+                // находим общий множитель
+                // делим каждое число на множитель и умножаем полученные 2 числа
 
-                    match numbers[0] % 10 {
-                        1 => {
-                            res = num_src;
-                            res
-                        }
-                        0 => {
-                            res = num_src;
-                            res
-                        }
-                        _ => {
-                            res = num_src / (gcd_var * gcd_var);
-                            res
-                        }
-                    };
-                } else {
-                    res = num_src / (a_var * b_var);
-                    println!("res: {}", res);
-                    return res;
-                }
+                // num_src = numbers[0] * numbers[1];
+                // gcd_var = gcd1(numbers[0], numbers[1]);
+                // println!("gcd: {}", gcd_var);
+
+                // if (numbers[0] != numbers[1]) {
+                //     while numbers[1] != 0 {
+                //         let tmp = numbers[0];
+                //         numbers[0] = numbers[1];
+                //         numbers[1] = tmp % numbers[1];
+                //     }
+
+                //     println!("num[0]: {}", numbers[0]);
+
+                //     match numbers[0] % 10 {
+                //         1 => {
+                //             res = num_src;
+                //             res
+                //         }
+                //         0 => {
+                //             res = num_src;
+                //             res
+                //         }
+                //         _ => {
+                //             res = num_src / (gcd_var * gcd_var);
+                //             res
+                //         }
+                //     };
+                // } else {
+                //     res = num_src / (a_var * b_var);
+                //     println!("res: {}", res);
+                //     return res;
+                // }
             }
         }
     }
