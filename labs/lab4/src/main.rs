@@ -1,14 +1,24 @@
 extern crate image;
 extern crate newtonfrac;
 extern crate num;
+extern crate num_complex;
 
 use newtonfrac::newtone_fractal;
+use num_complex::Complex;
 use std::io::Write;
+use std::ops::Mul;
 
 //mod newtone_fractal;
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
+
+    let x_0 = -0.7;
+    let x_n = 1.0;
+    let y_0 = -1.0;
+    let y_n = 0.7;
+
+    newtone_fractal::create_img(500, 500, 1000, x_0, x_n, y_0, y_n);
 
     if args.len() != 5 {
         writeln!(
@@ -29,9 +39,16 @@ fn main() {
 
     let mut pixels = vec![0; bounds.0 * bounds.1];
 
-    newtone_fractal::draw(bounds.0, bounds.1);
-
-    newtone_fractal::render(&mut pixels, bounds, upper_left, lower_right);
+    newtone_fractal::render(
+        &mut pixels,
+        bounds,
+        upper_left,
+        lower_right,
+        x_0,
+        x_n,
+        y_0,
+        y_n,
+    );
     newtone_fractal::write_image(&args[1], &pixels, bounds)
         .expect("ошибка при записи PNG-файла");
 }
