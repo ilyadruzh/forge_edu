@@ -1,7 +1,8 @@
 [package]
-name = "lab4"
+name = "newtonfrac"
 version = "0.1.0"
 authors = ["Ilya Druzhinin <ilya.druzh@gmail.com>"]
-edition = "2018"
 
 [dependencies]
+num = "0.2"
+image = "0.13.0"
