@@ -1,0 +1,5 @@
+Nov 08 16:50:44.342 ERRO crate-type must be cdylib to compile to wasm32-unknown-unknown. Add the following to your Cargo.toml file:
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+Nov 08 16:51:08.499 ERRO data did not match any variant of untagged enum CargoDependency for key `dependencies.crate-type`

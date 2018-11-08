@@ -12,13 +12,6 @@ pub mod newtone_fractal {
     use std::ops::{Add, Mul};
     use std::str::FromStr;
 
-    static ITER: i64 = 50;
-    static MIN: f64 = 1e-6;
-    static MAX: f64 = 1e+6;
-
-    // TODO: реализовать умножение, сложение и деление для Complex<T> и norm_sqr
-    // Метод z.norm_sqr() возвращает квадрат расстояния от z до начала координат
-
     trait ComplexOperations {
         fn norm_sqr(&self) -> f64;
     }
@@ -56,12 +49,21 @@ pub mod newtone_fractal {
         }
     }
 
-    pub fn create_img(img_w: u32, img_h: u32, iter: u64, x_0: f64, x_n: f64, y_0: f64, y_n: f64) {
-        let max_iterations = iter;
+    pub fn create_img(
+        img_w: i32,
+        img_h: i32,
+        iter: u64,
+        max: f64,
+        min: f64,
+        x_0: f64,
+        x_n: f64,
+        y_0: f64,
+        y_n: f64,
+    ) {
         let mut n: u64 = 0; // итератор
 
-        let mut mx: u32 = img_w / 2; // начало экранных координат
-        let mut my: u32 = img_h / 2; // начало экранных координат
+        let mut mx: i32 = img_w / 2; // начало экранных координат
+        let mut my: i32 = img_h / 2; // начало экранных координат
 
         let mut x_0: f64 = x_0; // диапазоны х
         let mut x_n: f64 = x_n; // диапазоны х
@@ -78,7 +80,7 @@ pub mod newtone_fractal {
         let scaley = 4.0 / img_h as f64;
 
         // Create a new ImgBuf with width: imgx and height: imgy
-        let mut imgbuf = GrayImage::new(img_w, img_h);
+        let mut imgbuf = GrayImage::new(img_w as u32, img_h as u32);
 
         // Iterate over the coordinates and pixels of the image
         for (x, y, pixel) in imgbuf.enumerate_pixels_mut() {
@@ -90,9 +92,9 @@ pub mod newtone_fractal {
 
             d = z;
 
-            while ((pow(z.x, 2) + pow(z.y, 2)) < MAX)
-                && ((pow(d.x, 2) + pow(d.y, 2)) > MIN)
-                && (n < max_iterations)
+            while ((pow(z.x, 2) + pow(z.y, 2)) < max)
+                && ((pow(d.x, 2) + pow(d.y, 2)) > min)
+                && (n < iter)
             {
                 t = z;
                 p = pow(pow(t.x, 2) + pow(t.y, 2), 2);
@@ -127,15 +129,20 @@ pub mod newtone_fractal {
     }
 
     #[allow(dead_code)]
-    pub fn draw(mx_input: i64, my_input: i64, x_0: f64, x_n: f64, y_0: f64, y_n: f64) {
-        let mut n: i64 = 0; // итератор
-        let mut mx: i64 = mx_input / 2; // начало экранных координат
-        let mut my: i64 = my_input / 2; // начало экранных координат
-
-        let mut x_0: f64 = x_0; // диапазоны х
-        let mut x_n: f64 = x_n; // диапазоны х
-        let mut y_0: f64 = y_0; // диапазоны у
-        let mut y_n: f64 = y_n; // диапазоны у
+    pub fn draw(
+        mx_input: i32,
+        my_input: i32,
+        iter: u64,
+        max: f64,
+        min: f64,
+        x_0: f64,
+        x_n: f64,
+        y_0: f64,
+        y_n: f64,
+    ) {
+        let mut n: u64 = 0; // итератор
+        let mx: i32 = mx_input / 2; // начало экранных координат
+        let my: i32 = my_input / 2; // начало экранных координат
 
         let mut p: f64 = 0.0;
 
@@ -144,16 +151,19 @@ pub mod newtone_fractal {
         let mut d = Complex { x: 0.0, y: 0.0 };
 
         for y in -my..my {
-            println!("y: {}", y);
             for x in -mx..my {
                 n = 0; // счетчик итераций
                 z.x = x as f64 * 0.005;
                 z.y = y as f64 * 0.005;
                 d = z;
 
-                while ((pow(z.x, 2) + pow(z.y, 2)) < MAX)
-                    && ((pow(d.x, 2) + pow(d.y, 2)) > MIN)
-                    && (n < ITER)
+                // println!("(pow(z.x, 2) + pow(z.y, 2): {}", pow(z.x, 2) + pow(z.y, 2));
+                // println!("(pow(d.x, 2) + pow(d.y, 2): {}", pow(z.x, 2) + pow(z.y, 2));
+                println!("n: {}", n);
+
+                while ((pow(z.x, 2) + pow(z.y, 2)) < max)
+                    && ((pow(d.x, 2) + pow(d.y, 2)) > min)
+                    && (n < iter)
                 {
                     t = z;
                     p = pow(pow(t.x, 2) + pow(t.y, 2), 2);
@@ -172,14 +182,16 @@ pub mod newtone_fractal {
 
                 // Выбираем цвет - pen.Color = Color.FromArgb(255, (n*9) % 255, 0, (n*9) % 255);
                 // Рисуем прямоугольник - g.DrawRectangle(pen, mx + x, my + y, 1, 1);
-                // draw_newtone_fractal(mx + x, my + y);
+                //draw_newtone_fractal(mx + x, my + y);
             }
         }
     }
 
-    fn escape_time(c: Complex<f64>) -> Option<u32> {
+   // fn draw_newtone_fractal() {}
+
+    fn escape_time(c: Complex<f64>, iter: u64) -> Option<u32> {
         let mut z = Complex { x: 0.0, y: 0.0 };
-        for i in 0..ITER {
+        for i in 0..iter {
             z = z * z + c;
             if z.norm_sqr() > 4.0 {
                 return Some(i as u32);
@@ -239,12 +251,13 @@ pub mod newtone_fractal {
         bounds: (usize, usize),
         upper_left: Complex<f64>,
         lower_right: Complex<f64>,
+        iter: u64,
     ) {
         assert!(pixels.len() == bounds.0 * bounds.1);
         for row in 0..bounds.1 {
             for column in 0..bounds.0 {
                 let point = pixel_to_point(bounds, (column, row), upper_left, lower_right);
-                pixels[row * bounds.0 + column] = match escape_time(point) {
+                pixels[row * bounds.0 + column] = match escape_time(point, iter) {
                     None => 0,
                     Some(count) => 255 - count as u8,
                 };
@@ -266,7 +279,7 @@ pub mod newtone_fractal {
         Ok(())
     }
 
-    fn point_color(x: f64) -> u64 {
+    fn point_color(x: f64) -> i64 {
         match x {
             0.0 => 000,
             1.0 => 010,
