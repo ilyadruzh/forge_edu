@@ -62,29 +62,41 @@ pub fn greet(x: u32) {
 #[wasm_bindgen]
 #[derive(Copy, Clone, Debug)]
 pub struct Complex {
-    x: f64,
-    y: f64,
+    re: f64, // действительное число
+    im: f64, // мнимая единица
 }
 
 #[wasm_bindgen]
-pub fn norm_sqr(self_: Complex) -> f64 {
-    return 0.0;
+pub fn sqr(self_: Complex) -> Complex {
+    Complex {
+        re: (self_.re * self_.re) - (self_.im * self_.im),
+        im: (2 as f64 * self_.re * self_.im),
+    }
 }
 
 #[wasm_bindgen]
 pub fn mul(self_: Complex, other: Complex) -> Complex {
     Complex {
-        x: self_.x * other.x,
-        y: self_.y * other.y,
+        re: self_.re * other.re,
+        im: self_.im * other.im,
     }
 }
 
 #[wasm_bindgen]
 pub fn add(self_: Complex, other: Complex) -> Complex {
     Complex {
-        x: self_.x + other.x,
-        y: self_.y + other.y,
+        re: self_.re + other.re,
+        im: self_.im + other.im,
     }
+}
+
+#[wasm_bindgen]
+pub fn abs(self_: Complex) -> f64 {
+    f64::sqrt((self_.re * self_.re) + (self_.im * self_.im))
+}
+
+pub fn color(n: u32) -> (u32, u32, u32) {
+    (0, 0, 0)
 }
 
 #[allow(dead_code)]
@@ -106,34 +118,39 @@ pub fn draw(
 
     let mut p: f64 = 0.0;
 
-    let mut z = Complex { x: 0.0, y: 0.0 };
-    let mut t = Complex { x: 0.0, y: 0.0 };
-    let mut d = Complex { x: 0.0, y: 0.0 };
+    let mut z = Complex { re: 0.0, im: 0.0 };
+    let mut t = Complex { re: 0.0, im: 0.0 };
+    let mut d = Complex { re: 0.0, im: 0.0 };
 
     for y in -my..my {
         for x in -mx..my {
-            n = 5;
-            z.x = x as f64 * 0.005;
-            z.y = y as f64 * 0.005;
+            n = 0;
+            z.re = x as f64 * 0.005;
+            z.im = y as f64 * 0.005;
             d = z;
 
-            while ((pow(z.x, 2) + pow(z.y, 2)) < max)
-                && ((pow(d.x, 2) + pow(d.y, 2)) > min)
+            while ((pow(z.re, 2) + pow(z.im, 2)) < max)
+                && ((pow(d.re, 2) + pow(d.im, 2)) > min)
                 && (n < iter)
             {
                 t = z;
-                p = pow(pow(t.x, 2) + pow(t.y, 2), 2);
+                p = pow(pow(t.re, 2) + pow(t.im, 2), 2);
 
-                z.x = (2 as f64 / 3 as f64) * t.x + (pow(t.x, 2) - pow(t.y, 2)) / (3 as f64 * p);
-                z.y = (2 as f64 / 3 as f64) * t.y * (1 as f64 - t.x / p);
-                d.x = t.x.abs() - z.x.abs();
-                d.y = t.y.abs() - z.y.abs();
+                z.re =
+                    (2 as f64 / 3 as f64) * t.re + (pow(t.re, 2) - pow(t.im, 2)) / (3 as f64 * p);
+                z.im = (2 as f64 / 3 as f64) * t.im * (1 as f64 - t.re / p);
+                d.re = t.re.abs() - z.re.abs();
+                d.im = t.im.abs() - z.im.abs();
                 n = n + 1;
             }
 
-            // Выбираем цвет - pen.Color = Color.FromArgb(255, (n*9) % 255, 0, (n*9) % 255);
-            // Рисуем прямоугольник - g.DrawRectangle(pen, mx + x, my + y, 1, 1);
-            //draw_newtone_fractal(mx + x, my + y);
+            // Выбираем цвет - в зависимости от n - pen.Color = Color.FromArgb(255, (n*9) % 255, 0, (n*9) % 255);
+            // Рисуем прямоугольник - передаем цвет и точку х и у
+            // draw_newtone_fractal(mx + x, my + y);
         }
     }
+}
+
+pub fn create_image(x: i32, y: i32, color: (u32, u32, u32)) {
+    
 }
