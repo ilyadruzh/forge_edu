@@ -12,7 +12,7 @@ use std::fs::File;
 use std::io::Write;
 use std::ops::Mul;
 
-static ITER: u32 = 500;
+static ITER: u32 = 1000;
 static MIN: f64 = 1e-6;
 static MAX: f64 = 1e+6;
 static WIDTH: i32 = 500;
