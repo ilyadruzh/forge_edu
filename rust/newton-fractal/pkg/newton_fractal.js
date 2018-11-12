@@ -7,23 +7,24 @@ export function __wbg_log_b7d39fee430a22e0(arg0) {
     __wbg_log_b7d39fee430a22e0_target(arg0);
 }
 /**
+* @param {number} arg0
 * @returns {void}
 */
-export function greet() {
-    return wasm.greet();
+export function greet(arg0) {
+    return wasm.greet(arg0);
 }
 
 /**
 * @param {Complex} arg0
-* @returns {number}
+* @returns {Complex}
 */
-export function norm_sqr(arg0) {
+export function sqr(arg0) {
     const ptr0 = arg0.ptr;
     if (ptr0 === 0) {
         throw new Error('Attempt to use a moved value');
     }
     arg0.ptr = 0;
-    return wasm.norm_sqr(ptr0);
+    return Complex.__wrap(wasm.sqr(ptr0));
 }
 
 /**
@@ -62,6 +63,19 @@ export function add(arg0, arg1) {
     }
     arg1.ptr = 0;
     return Complex.__wrap(wasm.add(ptr0, ptr1));
+}
+
+/**
+* @param {Complex} arg0
+* @returns {number}
+*/
+export function abs(arg0) {
+    const ptr0 = arg0.ptr;
+    if (ptr0 === 0) {
+        throw new Error('Attempt to use a moved value');
+    }
+    arg0.ptr = 0;
+    return wasm.abs(ptr0);
 }
 
 /**
