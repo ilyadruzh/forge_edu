@@ -6,4 +6,4 @@ authors = ["Ilya Druzhinin <ilya.druzh@gmail.com>"]
 [dependencies]
 num = "0.2"
 image = "0.13.0"
-num-complex = "*"
+num-complex = "0.2"

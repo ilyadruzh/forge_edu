@@ -1,10 +1,11 @@
 extern crate image;
 extern crate num;
+extern crate num_complex;
 
 pub mod newtone_fractal {
     use image::png::PNGEncoder;
     use image::{ColorType, GrayImage, ImageBuffer, Luma, Pixel};
-    use num::pow;
+    use num_complex::Complex;
     use std::clone::Clone;
     use std::f64;
     use std::fs::File;
@@ -12,187 +13,83 @@ pub mod newtone_fractal {
     use std::ops::{Add, Mul};
     use std::str::FromStr;
 
-    trait ComplexOperations {
-        fn norm_sqr(&self) -> f64;
+    ////////////////// COMPLEX /////////////////////////////
+
+    pub fn abs(z: Complex<f64>) -> f64 {
+        ((z.re * z.re) + (z.im * z.im)).sqrt()
     }
 
-    #[derive(Copy, Clone, Debug)]
-    pub struct Complex<T> {
-        x: T,
-        y: T,
-    }
+    // #[derive(Copy, Clone, Debug)]
+    // pub struct Complex<T> {
+    //     re: T,
+    //     im: T,
+    // }
 
-    // TODO: task1
-    impl ComplexOperations for Complex<f64> {
-        fn norm_sqr(&self) -> f64 {
-            return 0.0;
-        }
-    }
+    // pub fn sqr(self_: Complex<f64>) -> Complex<f64> {
+    //     Complex {
+    //         re: (self_.re * self_.re) - (self_.im * self_.im),
+    //         im: (2 as f64 * self_.re * self_.im),
+    //     }
+    // }
 
-    impl Mul for Complex<f64> {
-        type Output = Complex<f64>;
-        fn mul(self, other: Complex<f64>) -> Complex<f64> {
-            Complex {
-                x: self.x * other.x,
-                y: self.y * other.y,
-            }
-        }
-    }
+    // pub fn sqr_norm(self_: Complex<f64>) -> Complex<f64> {
+    //     Complex {
+    //         re: self_.re * self_.re,
+    //         im: self_.im * self_.im,
+    //     }
+    // }
 
-    impl Add for Complex<f64> {
-        type Output = Complex<f64>;
-        fn add(self, other: Complex<f64>) -> Complex<f64> {
-            Complex {
-                x: self.x + other.x,
-                y: self.y + other.y,
-            }
-        }
-    }
+    // // Как происходит умножение комплексных чисел
+    // pub fn mul(self_: Complex<f64>, other: Complex<f64>) -> Complex<f64> {
+    //     Complex {
+    //         re: (self_.re * other.re) - (self_.im * other.im),
+    //         im: (self_.re * other.im) + (self_.im * other.re),
+    //     }
+    // }
 
-    pub fn create_img(
-        img_w: i32,
-        img_h: i32,
-        iter: u64,
-        max: f64,
-        min: f64,
-        x_0: f64,
-        x_n: f64,
-        y_0: f64,
-        y_n: f64,
-    ) {
-        let mut n: u64 = 0; // итератор
+    // pub fn add(self_: Complex<f64>, other: Complex<f64>) -> Complex<f64> {
+    //     Complex {
+    //         re: self_.re + other.re,
+    //         im: self_.im + other.im,
+    //     }
+    // }
 
-        let mut mx: i32 = img_w / 2; // начало экранных координат
-        let mut my: i32 = img_h / 2; // начало экранных координат
+    // // Как происходит вычитание комплексных чисел
+    // pub fn sub(self_: Complex<f64>, other: Complex<f64>) -> Complex<f64> {
+    //     // Complex {
+    //     //     re: ((self_.re * other.re) + (self_.im * other.im))
+    //     //         / ((other.re * other.re) + (other.im * other.im)),
+    //     //     im: (-(self_.re * other.im) + (self_.im * other.re))
+    //     //         / (other.re * other.re + other.im * other.im),
+    //     // }
 
-        let mut x_0: f64 = x_0; // диапазоны х
-        let mut x_n: f64 = x_n; // диапазоны х
-        let mut y_0: f64 = y_0; // диапазоны у
-        let mut y_n: f64 = y_n; // диапазоны у
+    //     Complex {
+    //         re: self_.re - other.re,
+    //         im: self_.im - other.im,
+    //     }
+    // }
 
-        let mut p: f64 = 0.0;
+    // pub fn abs(self_: Complex<f64>) -> f64 {
+    //     f64::sqrt((self_.re * self_.re) + (self_.im * self_.im))
+    // }
 
-        let mut z = Complex { x: 0.0, y: 0.0 };
-        let mut t = Complex { x: 0.0, y: 0.0 };
-        let mut d = Complex { x: 0.0, y: 0.0 };
+    // pub fn arg(z: Complex<f64>) -> f64 {
+    //     z.im.atan2(z.re)
+    // }
 
-        let scalex = 4.0 / img_w as f64;
-        let scaley = 4.0 / img_h as f64;
-
-        // Create a new ImgBuf with width: imgx and height: imgy
-        let mut imgbuf = GrayImage::new(img_w as u32, img_h as u32);
-
-        // Iterate over the coordinates and pixels of the image
-        for (x, y, pixel) in imgbuf.enumerate_pixels_mut() {
-            let cx = x as f64 * scalex - 2.0;
-            let cy = y as f64 * scaley - 2.0;
-
-            z.x = x as f64 * 0.005;
-            z.y = y as f64 * 0.005;
-
-            d = z;
-
-            while ((pow(z.x, 2) + pow(z.y, 2)) < max)
-                && ((pow(d.x, 2) + pow(d.y, 2)) > min)
-                && (n < iter)
-            {
-                t = z;
-                p = pow(pow(t.x, 2) + pow(t.y, 2), 2);
-
-                z.x = (2 as f64 / 3 as f64) * t.x + (pow(t.x, 2) - pow(t.y, 2)) / (3 as f64 * p);
-                z.y = (2 as f64 / 3 as f64) * t.y * (1 as f64 - t.x / p);
-                d.x = t.x.abs() - z.x.abs();
-                d.y = t.y.abs() - z.y.abs();
-                n = n + 1;
-
-                *pixel = Luma([n as u8]);
-            }
-
-            // let c = Complex { x: -0.4, y: 0.6 };
-            // let mut i = 0;
-            // for t in 0..max_iterations {
-            //     // println!("z.norm_sqr(): {}", z.norm_sqr());
-            //     if z.norm_sqr() > 2.0 {
-            //         break;
-            //     }
-            //     z = z * z + c;
-            //     i = t;
-            // }
-
-            // // Create an 8bit pixel of type Luma and value i
-            // // and assign in to the pixel at position (x, y)
-            // *pixel = Luma([i as u8]);
-        }
-
-        // Save the image as “fractal.png”, the format is deduced from the path
-        imgbuf.save("fractal.png").unwrap();
-    }
-
-    #[allow(dead_code)]
-    pub fn draw(
-        mx_input: i32,
-        my_input: i32,
-        iter: u64,
-        max: f64,
-        min: f64,
-        x_0: f64,
-        x_n: f64,
-        y_0: f64,
-        y_n: f64,
-    ) {
-        let mut n: u64 = 0; // итератор
-        let mx: i32 = mx_input / 2; // начало экранных координат
-        let my: i32 = my_input / 2; // начало экранных координат
-
-        let mut p: f64 = 0.0;
-
-        let mut z = Complex { x: 0.0, y: 0.0 };
-        let mut t = Complex { x: 0.0, y: 0.0 };
-        let mut d = Complex { x: 0.0, y: 0.0 };
-
-        for y in -my..my {
-            for x in -mx..my {
-                n = 0; // счетчик итераций
-                z.x = x as f64 * 0.005;
-                z.y = y as f64 * 0.005;
-                d = z;
-
-                // println!("(pow(z.x, 2) + pow(z.y, 2): {}", pow(z.x, 2) + pow(z.y, 2));
-                // println!("(pow(d.x, 2) + pow(d.y, 2): {}", pow(z.x, 2) + pow(z.y, 2));
-                println!("n: {}", n);
-
-                while ((pow(z.x, 2) + pow(z.y, 2)) < max)
-                    && ((pow(d.x, 2) + pow(d.y, 2)) > min)
-                    && (n < iter)
-                {
-                    t = z;
-                    p = pow(pow(t.x, 2) + pow(t.y, 2), 2);
-
-                    z.x =
-                        (2 as f64 / 3 as f64) * t.x + (pow(t.x, 2) - pow(t.y, 2)) / (3 as f64 * p);
-                    z.y = (2 as f64 / 3 as f64) * t.y * (1 as f64 - t.x / p);
-                    d.x = t.x.abs() - z.x.abs();
-                    d.y = t.y.abs() - z.y.abs();
-                    n = n + 1;
-                    println!("z: {} - {}", z.x, z.y);
-                    println!("t: {} - {}", t.x, t.y);
-                    println!("d: {} - {}", d.x, d.y);
-                    println!("p: {}", p);
-                }
-
-                // Выбираем цвет - pen.Color = Color.FromArgb(255, (n*9) % 255, 0, (n*9) % 255);
-                // Рисуем прямоугольник - g.DrawRectangle(pen, mx + x, my + y, 1, 1);
-                //draw_newtone_fractal(mx + x, my + y);
-            }
-        }
-    }
-
-   // fn draw_newtone_fractal() {}
+    // pub fn pow(z: Complex<f64>, n: i32) -> Complex<f64> {
+    //     let i: i32 = 0;
+    //     let mut z1: Complex<f64> = Complex { re: 1.0, im: 0.0 };
+    //     for x in i..n {
+    //         z1 = mul(z, z1);
+    //     }
+    //     return z1;
+    // }
 
     fn escape_time(c: Complex<f64>, iter: u64) -> Option<u32> {
-        let mut z = Complex { x: 0.0, y: 0.0 };
+        let mut z = Complex { re: 0.0, im: 0.0 };
         for i in 0..iter {
-            z = z * z + c;
+            z = z.mul(z) + c;
             if z.norm_sqr() > 4.0 {
                 return Some(i as u32);
             }
@@ -214,7 +111,7 @@ pub mod newtone_fractal {
 
     pub fn parse_complex(s: &str) -> Option<Complex<f64>> {
         match parse_display_size(s, ',') {
-            Some((x, y)) => Some(Complex { x, y }),
+            Some((re, im)) => Some(Complex { re, im }),
             None => None,
         }
     }
@@ -232,11 +129,14 @@ pub mod newtone_fractal {
         upper_left: Complex<f64>,
         lower_right: Complex<f64>,
     ) -> Complex<f64> {
-        let (width, height) = (lower_right.x - upper_left.x, upper_left.y - lower_right.y);
+        let (width, height) = (
+            lower_right.re - upper_left.re,
+            upper_left.im - lower_right.im,
+        );
         Complex {
-            x: upper_left.x + pixel.0 as f64 * width / bounds.0 as f64,
-            y: upper_left.y - pixel.1 as f64 * height / bounds.1 as f64, // Почему здесь вычитание? pixel.1 увеличивается при движении вниз,
-                                                                         // тогда как мнимая часть увеличивается при движении вверх.
+            re: upper_left.re + pixel.0 as f64 * width / bounds.0 as f64,
+            im: upper_left.im - pixel.1 as f64 * height / bounds.1 as f64, // Почему здесь вычитание? pixel.1 увеличивается при движении вниз,
+                                                                           // тогда как мнимая часть увеличивается при движении вверх.
         }
     }
 
@@ -246,18 +146,17 @@ pub mod newtone_fractal {
     /// представляет один полутоновый пиксель. Аргументы `upper_left` и `lower_right`
     /// определяют точки на комплексной плоскости, соответствующие левому верхнему
     /// и правому нижнему углам буфера пикселей.
-    pub fn render(
+    fn render(
         pixels: &mut [u8],
         bounds: (usize, usize),
         upper_left: Complex<f64>,
         lower_right: Complex<f64>,
-        iter: u64,
     ) {
         assert!(pixels.len() == bounds.0 * bounds.1);
         for row in 0..bounds.1 {
             for column in 0..bounds.0 {
                 let point = pixel_to_point(bounds, (column, row), upper_left, lower_right);
-                pixels[row * bounds.0 + column] = match escape_time(point, iter) {
+                pixels[row * bounds.0 + column] = match escape_time(point, 255) {
                     None => 0,
                     Some(count) => 255 - count as u8,
                 };
@@ -267,7 +166,11 @@ pub mod newtone_fractal {
 
     /// Записывает буфер `pixels`, размеры которого заданы аргументом `bounds`, в файл
     /// с именем `filename`.
-    pub fn write_image(filename: &str, pixels: &[u8], bounds: (usize, usize)) -> Result<(), Error> {
+    fn write_image(
+        filename: &str,
+        pixels: &[u8],
+        bounds: (usize, usize),
+    ) -> Result<(), std::io::Error> {
         let output = File::create(filename)?;
         let encoder = PNGEncoder::new(output);
         encoder.encode(
@@ -286,4 +189,97 @@ pub mod newtone_fractal {
             _ => 0,
         }
     }
+
+    ///////////////////////////// CREATE IMG /////////////////////////////
+
+    pub fn choose_color(x: i32, y: i32, n: u32) -> (u32, u32, u32) {
+        // В зависимисомти, от X, Y, N выбирается цвет
+        (0, 0, 0)
+    }
+
+    pub fn create_image(x: i32, y: i32, color: (u32, u32, u32)) {}
+
+    ///////////////////////////// NEWTOM /////////////////////////////
+
+    #[allow(dead_code)]
+    pub fn draw(
+        mx_input: i32,
+        my_input: i32,
+        iter: u32,
+        max: f64,
+        min: f64,
+        x_0: f64,
+        x_n: f64,
+        y_0: f64,
+        y_n: f64,
+    ) {
+        let mut n: u32 = 0; // итератор
+        let mx: i32 = mx_input / 2; // начало экранных координат
+        let my: i32 = my_input / 2; // начало экранных координат
+
+        let mut p: f64 = 0.0;
+
+        let mut z = Complex { re: 0.0, im: 0.0 }; // Основаная функция
+        let mut t = Complex { re: 0.0, im: 0.0 };
+        let mut d = Complex { re: 0.0, im: 0.0 }; // Производная функция
+
+        let bounds = (mx_input, my_input);
+        let mut pixels = vec![0; bounds.0 as usize * bounds.1 as usize];
+
+        let mut imgbuf = image::GrayImage::new(mx_input as u32, my_input as u32);
+        let scalex = 4.0 / mx_input as f32;
+        let scaley = 4.0 / my_input as f32;
+
+        for y in 0..my {
+            for x in 0..my {
+                n = 0;
+                d = z;
+
+                // Условия, при которых комплексное число устремляется в бесконечность
+                // Первый параметр - функция от Z - функции комплексного числа
+                // Второй параметр функция от D - производная от функции
+                // Третий параметр N - счетчик
+
+                let mut c: Complex<f64> = Complex {
+                    re: mx as f64,
+                    im: my as f64,
+                };
+
+                while (abs(z) < max && n < iter) {
+                    z = z.mul(z).add(c);
+                    n = n + 1;
+                }
+
+                // while ((pow(z, 2) < max) && (pow(d, 2) > min) && (n < iter)) {
+                //    t = z; // временная переменная
+                // вычисляем комплексную функцию
+                //      z.x =
+                // вычисляем производную комплексной функции
+                //     p = pow(pow(t.re, 2) + pow(t.im, 2), 2); // для чего это?
+                //     z.re = (2.0 / 3.0) * t.re + (pow(t.re, 2) - pow(t.im, 2)) / (3.0 * p);
+                //     z.im = (2.0 / 3.0) * t.im * (1.0 - t.re / p);
+                //     d.re = t.re.abs() - z.re.abs();
+                //     d.im = t.im.abs() - z.im.abs();
+
+                imgbuf.put_pixel(x as u32, y as u32, image::Luma([n as u8]));
+            }
+        }
+
+           imgbuf.save("fractal.png").unwrap();
+
+        // render(
+        //     &mut pixels,
+        //     (bounds.0 as usize, bounds.1 as usize),
+        //     Complex { re: x_0, im: y_0 },
+        //     Complex { re: x_n, im: y_n },
+        // );
+
+        // write_image(
+        //     "fractal.png",
+        //     &pixels,
+        //     (bounds.0 as usize, bounds.1 as usize),
+        // )
+        // .expect("ошибка при записи PNG-файла");
+    }
+
 }
