@@ -1,8 +1,0 @@
-/target
-**/*.rs.bk
-Cargo.lock
-wasm-pack.log
-package-lock.json
-node_modules
-package-lock.json
-yarn.lock
