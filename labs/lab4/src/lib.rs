@@ -31,12 +31,8 @@ pub mod newtone_fractal {
     // dF(x) = numRoots*x^(numRoots -1)
     // TODO: улучшить, чтобы степень приходила параметром
     pub fn dfunc(z: Complex<f64>) -> Complex<f64> {
-        // println!("z: {}", z);
         let step1 = z * z;
-        // println!("step1: {}", step1);
         let step2 = step1.scale(3 as f64);
-        // println!("step2: {}", step2);
-        // println!("dfunc {}", (z * z).scale(3 as f64));
         (z * z).scale(3 as f64)
     }
 
@@ -70,7 +66,6 @@ pub mod newtone_fractal {
                 // zx = scaled x coordinate of pixel (scaled to lie in the Mandelbrot X scale (-2.5, 1))
                 //     zy = scaled y coordinate of pixel (scaled to lie in the Mandelbrot Y scale (-1, 1))
                 //     float2 z = float2(zx, zy); //Z is originally set to the pixel coordinates
-
                 let mut zxy = Complex {
                     re: x as f64 * 4.0 / (my_input - 2) as f64,
                     im: -(y as f64 * 4.0 / (mx_input + 2) as f64),
@@ -78,17 +73,10 @@ pub mod newtone_fractal {
 
                 while n < iter {
                     let step1 = zfunc(zxy);
-                    // println!("step1: {}", step1);
                     let step2 = zxy.sub(step1);
-                    // println!("step2: {}", step2);
                     let step3 = dfunc(zxy);
-                    // println!("step3: {}", step3);
                     let step4 = step2 / step3;
-                    // println!("step4: {}", step4);
                     zxy = zxy.sub(zfunc(zxy) / dfunc(zxy));
-                    println!("zxy: {}", zxy);
-                    // zxy = step4;
-
                     n = n + 1;
                 }
 
@@ -104,18 +92,8 @@ pub mod newtone_fractal {
                 //     imgbuf.put_pixel(i_to_u(x, mx), i_to_u(y, my), image::Rgb([245, 245, 220]));
                 // }
 
-                ///////////////////////////
-                
-                // println!("r1: {}", r1);
-                // println!("r2: {}", r2);
-                // println!("r3: {}", r3);
-
-                // println!("abs(sub(zxy, r1)): {}", abs(zxy - r1));
-                // println!("abs(sub(zxy, r2)): {}", abs(zxy - r2));
-                // println!("abs(sub(zxy, r3)): {}", abs(zxy - r3));
-
                 if abs(zxy - r1) < tolerance {
-                    imgbuf.put_pixel(i_to_u(x, mx), i_to_u(y, my), image::Rgb([255, 0, n as u8]));
+                    imgbuf.put_pixel(i_to_u(x, mx), i_to_u(y, my), image::Rgb([255, 0, 0]));
                 }
 
                 if abs(zxy - r2) <= tolerance {
@@ -123,21 +101,8 @@ pub mod newtone_fractal {
                 }
 
                 if abs(zxy - r3) <= tolerance {
-                    imgbuf.put_pixel(i_to_u(x, mx), i_to_u(y, my), image::Rgb([n as u8, 0, 255]));
+                    imgbuf.put_pixel(i_to_u(x, mx), i_to_u(y, my), image::Rgb([0, 0, 255]));
                 }
-                /////////////////////////
-
-                // if abs(zxy - r1) < tolerance {
-                //     imgbuf.put_pixel(i_to_u(x, mx), i_to_u(y, my), image::Rgb([255, 0, 0]));
-                // }
-
-                // if abs(zxy - r2) <= tolerance {
-                //     imgbuf.put_pixel(i_to_u(x, mx), i_to_u(y, my), image::Rgb([0, 255, 0]));
-                // }
-
-                // if abs(zxy - r3) <= tolerance {
-                //     imgbuf.put_pixel(i_to_u(x, mx), i_to_u(y, my), image::Rgb([0, 0, 255]));
-                // }
             }
         }
 
