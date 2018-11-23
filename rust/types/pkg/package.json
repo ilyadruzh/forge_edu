@@ -1,0 +1,20 @@
+{
+  "name": "wasm-types",
+  "collaborators": [
+    "Ilya Druzhinin <ilya.druzh@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IlyaDruzhinin/wasm-types"
+  },
+  "files": [
+    "wasm_types_bg.wasm",
+    "wasm_types.js",
+    "wasm_types.d.ts"
+  ],
+  "module": "wasm_types.js",
+  "types": "wasm_types.d.ts",
+  "sideEffects": "false"
+}
