@@ -1,4 +1,4 @@
 ## Запуск
 
-    iex hello-world.ex - запуск подуля ???
-    elixir hello-world.exs - запуск скрипта
+    iex hello-world.ex - REPL
+    elixir hello-world.exs - run
