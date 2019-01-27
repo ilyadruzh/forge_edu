@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ab9fc19-6667-48ae-9baf-c1dafcdc056e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/first_app.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/first_app.ex" afterDir="false" />
+    <list default="true" id="454ac6a4-e16e-4380-a285-71a9b1965090" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../first_app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../first_app/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../first_app/first_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../first_app/first_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../first_app/lib/first_app.ex" beforeDir="false" afterPath="$PROJECT_DIR$/../first_app/lib/first_app.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello/hello.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello/hello.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/lib/drop.ex" beforeDir="false" afterPath="$PROJECT_DIR$/../study/lib/drop.ex" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/assets/node_modules/phoenix/" />
     <ignored path="$PROJECT_DIR$/assets/node_modules/phoenix_html/" />
@@ -22,20 +25,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/first_app.ex">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mix.exs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+            <state relative-caret-position="315">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mix.exs">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/bitcointest.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -45,17 +48,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/lib/first_app.ex" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="988" />
-    <option name="y" value="27" />
-    <option name="width" value="920" />
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="990" />
+    <option name="y" value="25" />
+    <option name="width" value="930" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -68,25 +64,25 @@
         <subPane>
           <expand>
             <path>
-              <item name="first_app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first_app" type="462c0819:PsiDirectoryNode" />
+              <item name="bitcointest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bitcointest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="first_app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first_app" type="462c0819:PsiDirectoryNode" />
+              <item name="bitcointest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bitcointest" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../study" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -127,23 +123,24 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0ab9fc19-6667-48ae-9baf-c1dafcdc056e" name="Default Changelist" comment="" />
-      <created>1548286863375</created>
+      <changelist id="454ac6a4-e16e-4380-a285-71a9b1965090" name="Default Changelist" comment="" />
+      <created>1548535797337</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1548286863375</updated>
-      <workItem from="1548286872143" duration="24000" />
-      <workItem from="1548452581334" duration="1720000" />
+      <updated>1548535797337</updated>
+      <workItem from="1548535800725" duration="96000" />
+      <workItem from="1548579028810" duration="1379000" />
+      <workItem from="1548609227719" duration="97000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1744000" />
+    <option name="totallyTimeSpent" value="1572000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="25" width="1859" height="1055" extended-state="6" />
+    <frame x="990" y="25" width="930" height="1053" extended-state="4" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12355212" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25791857" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -158,7 +155,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32829374" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -177,15 +174,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/mix.exs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="315">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/first_app.ex">
+    <entry file="file://$PROJECT_DIR$/lib/bitcointest.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>

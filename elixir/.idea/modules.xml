@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/connection//connection.iml" filepath="$PROJECT_DIR$/hello/deps/connection//connection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/db_connection//db_connection.iml" filepath="$PROJECT_DIR$/hello/deps/db_connection//db_connection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/decimal//decimal.iml" filepath="$PROJECT_DIR$/hello/deps/decimal//decimal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/study//drop.iml" filepath="$PROJECT_DIR$/study//drop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/ecto//ecto.iml" filepath="$PROJECT_DIR$/hello/deps/ecto//ecto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/ecto_sql//ecto_sql.iml" filepath="$PROJECT_DIR$/hello/deps/ecto_sql//ecto_sql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/elixir.iml" filepath="$PROJECT_DIR$/.idea/elixir.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elixirboilerplate//elixirboilerplate.iml" filepath="$PROJECT_DIR$/elixirboilerplate//elixirboilerplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elm_articles//elm_articles.iml" filepath="$PROJECT_DIR$/elm_articles//elm_articles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/file_system//file_system.iml" filepath="$PROJECT_DIR$/hello/deps/file_system//file_system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/first_app//first_app.iml" filepath="$PROJECT_DIR$/first_app//first_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/gettext//gettext.iml" filepath="$PROJECT_DIR$/hello/deps/gettext//gettext.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello//hello.iml" filepath="$PROJECT_DIR$/hello//hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/jason//jason.iml" filepath="$PROJECT_DIR$/hello/deps/jason//jason.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/mime//mime.iml" filepath="$PROJECT_DIR$/hello/deps/mime//mime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/phoenix//phoenix.iml" filepath="$PROJECT_DIR$/hello/deps/phoenix//phoenix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/phoenix_ecto//phoenix_ecto.iml" filepath="$PROJECT_DIR$/hello/deps/phoenix_ecto//phoenix_ecto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/phoenix_html//phoenix_html.iml" filepath="$PROJECT_DIR$/hello/deps/phoenix_html//phoenix_html.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/phoenix_live_reload//phoenix_live_reload.iml" filepath="$PROJECT_DIR$/hello/deps/phoenix_live_reload//phoenix_live_reload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/phoenix_pubsub//phoenix_pubsub.iml" filepath="$PROJECT_DIR$/hello/deps/phoenix_pubsub//phoenix_pubsub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/plug//plug.iml" filepath="$PROJECT_DIR$/hello/deps/plug//plug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/plug_cowboy//plug_cowboy.iml" filepath="$PROJECT_DIR$/hello/deps/plug_cowboy//plug_cowboy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/plug_crypto//plug_crypto.iml" filepath="$PROJECT_DIR$/hello/deps/plug_crypto//plug_crypto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/deps/postgrex//postgrex.iml" filepath="$PROJECT_DIR$/hello/deps/postgrex//postgrex.iml" />
+    </modules>
+  </component>
+</project>
