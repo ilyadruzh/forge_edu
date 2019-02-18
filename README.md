@@ -4,8 +4,28 @@
     dotnet new console
     dotnet run .
 
+### Elixir
+    iex hello-world.ex - REPL
+    elixir hello-world.exs - run
+
 ### Elm
     elm reactor
+    
+### Erlang
+    erlc {filename.erl} - compile to beam file
+    erl -noshell -s {filename} start -s init stop - run app
+    
+### F#
+#### Create new project
+    dotnet new sln -o {ProjName} 
+    dotnet new lib -lang F# -o src/Library - create lib 
+    dotnet new console -lang F# -o src/App - create console app
+    dotnet sln add src/App/App.fsproj - add reference to app or lib in project
+
+#### Compile and run
+    dotnet build
+    dotnet run .
+
 
 ### Kotlin
 https://kotlinlang.org/docs/tutorials/command-line.html
