@@ -1,8 +1,0 @@
-/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/Library/bin/Debug/netstandard2.0/Library.deps.json
-/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/Library/bin/Debug/netstandard2.0/Library.dll
-/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/Library/bin/Debug/netstandard2.0/Library.pdb
-/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/Library/obj/Debug/netstandard2.0/Library.fsprojAssemblyReference.cache
-/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/Library/obj/Debug/netstandard2.0/Library.AssemblyInfoInputs.cache
-/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/Library/obj/Debug/netstandard2.0/Library.AssemblyInfo.fs
-/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/Library/obj/Debug/netstandard2.0/Library.dll
-/home/ilyadruzh/Documents/sandbox_edu/dotnet/fsharp/helloworld/FSNetCore/src/Library/obj/Debug/netstandard2.0/Library.pdb

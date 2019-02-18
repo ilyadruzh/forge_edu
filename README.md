@@ -1,3 +1,40 @@
+### C#
+#### Create new project & Run
+
+    dotnet new console
+    dotnet run .
+
+### Elm
+    elm reactor
+
+### Kotlin
+https://kotlinlang.org/docs/tutorials/command-line.html
+#### Compilation & Run executed file
+
+    kotlinc {filename}.kt -include-runtime -d bin/{filename}.jar
+    java -jar {filename}.jar
+
+#### Lib compilation
+
+    kotlinc {filename}.kt -d bin/{filename}.jar
+
+### Mercury
+#### Compile & Run
+    /usr/local/mercury-14.01.1/bin/mmc hello-world.m
+    ./hello
+
+#### Additional info
+
+Don't forget to add /usr/local/mercury-rotd-2018-08-15/bin to your PATH,
+-- /usr/local/mercury-rotd-2018-08-15/share/man to your MANPATH,
+-- and /usr/local/mercury-rotd-2018-08-15/share/info to your INFOPATH,
+-- to copy deep_profiler/mdprof_cgi to /usr/lib/cgi-bin,
+-- and to add the following lines to the `.emacs' file
+-- in your home directory:
+	(add-to-list 'load-path 
+		"/usr/local/mercury-rotd-2018-08-15/lib/mercury/elisp")
+	(autoload 'mdb "gud" "Invoke the Mercury debugger" t)
+
 # Песочница всяких edu тем
 
 | Тема | C | Clojure | C# | F# | Elixir | Elm | Erlang | Go | Kotlin | Mercury | Prolog | Rust |
