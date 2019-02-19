@@ -1,5 +1,3 @@
-use std::num::sqrt;
-
 // Примитивная функция сложения
 // TODO: принимать обобщеные типы и возвращать обобщенный тип Result, Option
 // Проводить проверку внутри - возвращать или ошибку с описанием или результат суммирования
@@ -7,23 +5,31 @@ fn sum(a: i64, b: i64) -> i64 {
     return a + b;
 }
 
-// Реализация рекурсии
-fn recursion(a: i64, b: i64) -> i64 {
-    return 0;
-}
-
-// НАйти гипотенузу
-fn find_hypotenuse(a: i64, b: i64) -> i64 {
+fn find_hypotenuse(a: i64, b: i64) -> f64 {
     let a2 = a * a;
     let b2 = b * b;
-    let h = (a + b).sqrt();
+    let h = ((a + b) as f64).sqrt();
     return h;
 }
 
-
-
 fn main() {
-    println!("Hello, world!");
+
+    let x = i32::max_value();
+
+    let y = x.wrapping_add(1);
+    assert_eq!(y, i32::min_value());
+
+    let y = x.saturating_add(1);
+    assert_eq!(y, i32::max_value());
+
+    let (y, overflowed) = x.overflowing_add(1);
+    assert!(overflowed);
+    assert_eq!(y, i32::min_value());
+
+    match x.checked_add(1) {
+        Some(y) => unreachable!(),
+        None => println!("overflowed"),
+    }
 }
 
 #[cfg(test)]
