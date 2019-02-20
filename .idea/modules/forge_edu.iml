@@ -2,7 +2,19 @@
 <module external.system.id="CLOJURE_DEPS" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../.." />
+    <content url="file://$MODULE_DIR$/../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../math/rust/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../math/rust/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../math/rust/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../math/rust/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../bitcoin/rust/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../bitcoin/rust/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../bitcoin/rust/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../bitcoin/rust/benches" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../bitcoin/rust/target" />
+      <excludeFolder url="file://$MODULE_DIR$/../../math/rust/target" />
+      <excludePattern pattern="elm-stuff" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
