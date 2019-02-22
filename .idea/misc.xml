@@ -3,6 +3,7 @@
   <component name="CargoProjects">
     <cargoProject FILE="$PROJECT_DIR$/math/rust/Cargo.toml" />
     <cargoProject FILE="$PROJECT_DIR$/bitcoin/rust/Cargo.toml" />
+    <cargoProject FILE="$PROJECT_DIR$/stdin/rust/Cargo.toml" />
   </component>
   <component name="ClojureProjectResolveSettings">
     <currentScheme>IDE</currentScheme>

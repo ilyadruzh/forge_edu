@@ -11,8 +11,13 @@
       <sourceFolder url="file://$MODULE_DIR$/../../bitcoin/rust/examples" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../bitcoin/rust/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../bitcoin/rust/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../stdin/rust/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../stdin/rust/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../stdin/rust/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../stdin/rust/benches" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../bitcoin/rust/target" />
       <excludeFolder url="file://$MODULE_DIR$/../../math/rust/target" />
+      <excludeFolder url="file://$MODULE_DIR$/../../stdin/rust/target" />
       <excludePattern pattern="elm-stuff" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -5,3 +5,4 @@ authors = ["Ilya Druzhinin <ilya.druzh@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+futures-preview = "0.3.0-alpha.12"
