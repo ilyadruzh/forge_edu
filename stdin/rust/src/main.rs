@@ -1,4 +1,5 @@
 use std::io::{self, BufRead};
+use std::io::prelude::*;
 
 fn main() {
 
@@ -10,15 +11,10 @@ fn main() {
         .unwrap()
         .unwrap()
         .split(' ')
-        .map(|s| s.trim())
-//        .filter(|s| !s.is_empty())
         .map(|s| s.parse().unwrap())
         .collect();
 
-    for x in numbers {
-        println!("x: {}", x);
-    }
+    let res: i32 = numbers.iter().sum();
 
-//    println!("{:?}", numbers);
-
+    println!("{}", res);
 }
