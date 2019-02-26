@@ -52,7 +52,7 @@ pub fn div_vec(
     // other Vec<(price, size)>
     let mut vec_2: Vec<(price, size)> = Vec::new();
 
-    // map()
+    // map()a
 
     vec.map()
 
