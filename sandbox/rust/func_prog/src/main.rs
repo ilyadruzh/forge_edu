@@ -92,6 +92,11 @@ fn pisano_period(fib_num: u64, num: u64) {
 
     let mut vec_arr = Vec::new();
     let mut count = 0;
+    let mut period = 0;
+
+    for x in 0..fib_num {
+        
+    }
 
     match fib_num {
         1 => println!("1"),
@@ -105,7 +110,7 @@ fn pisano_period(fib_num: u64, num: u64) {
                 // print!("- {} ", res % num);
                 count += {
                     let x = res % num;
-                    let y = (res +1) % num;
+                    let y = (res + 1) % num;
 
                     if x == 0 && y == 1 {
                     println!("\nx: {}", x);
