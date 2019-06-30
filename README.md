@@ -1,71 +1,52 @@
-### C#
-#### Create new project & Run
+# For education purpose only
 
-    dotnet new console
-    dotnet run .
+I've been selected a few programming languages for education purpose:
+
+- Elixir
+- Mercury
+- Racket
+- Rust
+
+# Installation
 
 ### Elixir
-    iex hello-world.ex - REPL
-    elixir hello-world.exs - run
-
-### Elm
-    elm reactor
-    
-### Erlang
-    erlc {filename.erl} - compile to beam file
-    erl -noshell -s {filename} start -s init stop - run app
-    
-### F#
-#### Create new project
-    dotnet new sln -o {ProjName} 
-    dotnet new lib -lang F# -o src/Library - create lib 
-    dotnet new console -lang F# -o src/App - create console app
-    dotnet sln add src/App/App.fsproj - add reference to app or lib in project
-
-#### Compile and run
-    dotnet build
-    dotnet run .
-
-
-### Kotlin
-https://kotlinlang.org/docs/tutorials/command-line.html
-#### Compilation & Run executed file
-
-    kotlinc {filename}.kt -include-runtime -d bin/{filename}.jar
-    java -jar {filename}.jar
-
-#### Lib compilation
-
-    kotlinc {filename}.kt -d bin/{filename}.jar
+https://elixir-lang.org/install.html
 
 ### Mercury
-#### Compile & Run
-    /usr/local/mercury-14.01.1/bin/mmc hello-world.m
-    ./hello
+http://dl.mercurylang.org/index.html
 
-#### Additional info
+### Racket
+https://download.racket-lang.org/
 
-Don't forget to add /usr/local/mercury-rotd-2018-08-15/bin to your PATH,
--- /usr/local/mercury-rotd-2018-08-15/share/man to your MANPATH,
--- and /usr/local/mercury-rotd-2018-08-15/share/info to your INFOPATH,
--- to copy deep_profiler/mdprof_cgi to /usr/lib/cgi-bin,
--- and to add the following lines to the `.emacs' file
--- in your home directory:
-	(add-to-list 'load-path 
-		"/usr/local/mercury-rotd-2018-08-15/lib/mercury/elisp")
-	(autoload 'mdb "gud" "Invoke the Mercury debugger" t)
+### Rust
+https://rustup.rs/
+
+# Create, Build, Compile
+
+### Elixir
+
+### Mercury
+
+/usr/local/mercury-14.01.1/bin/mmc hello.m
+
+### Racket
+
+### Rust
+    
+    cargo build 
+    cargo run
 
 # Песочница всяких edu тем
 
-| Тема | C | Clojure | C# | F# | Elixir | Elm | Erlang | Go | Kotlin | Mercury | Prolog | Rust |
-|:----:|:-:|:-------:|:--:|:--:|:------:|:---:|:------:|:--:|:------:|:-------:|:------:|:----:|
-| Hello World | x | x |   |   |   |   |   |   |   |   |   |   |
-| Math |   |   |   |   |   |   |   |   |   |   |   |   |
-| Factorial |   |   |   |   |   |   |   |   |   |   |   |   |
-| Hoare sort |   |   |   |   |   |   |   |   |   |   |   |   |
-| Определение N-ого числa Фибоначчи |   |   |   |   |   |   |   |   |   |   |   |   |
-| Ряд Тейлора |   |   |   |   |   |   |   |   |   |   |   |   |
-| Recursion |   |   |   |   |   |   |   |   |   |   |   |   |
+| Topic | Elixir | Mercury | Racket | Rust |
+|:----:|:-:|:-------:|:--:|:--:|
+| Hello World | x | x |   |   |
+| Math |   |   |   |   |
+| Factorial |   |   |   |   |
+| Hoare sort |   |   |   |   |
+| Fibonacci |   |   |   |   |
+| Ряд Тейлора |   |   |   |   |
+| Recursion |   |   |   |   |
 
 
 ## Общие задачи
