@@ -86,3 +86,41 @@
            (search f b a))
           (else (error "У аргументов не разные знаки " a b)))))
 
+(define tolerance 0.000001)
+
+(define (fixed-point f first-guess)
+  (define (close-enough? v1 v2)
+    (< (abs (- v1 v2)) tolerance))
+  (define (try guess)
+    (let ((next (f guess)))
+      (if (close-enough? guess next)
+          next
+          (try next))))
+  (try first-guess))
+
+(define (sqrt x)
+  (fixed-point (lambda (y) (average y (/ x y)))
+               1.0))
+(define (average-damp f)
+  (lambda (x) (average x (f x))))
+
+(define (cube-root x)
+  (fixed-point (average-damp (lambda (y) (/ x (square y))))
+               1.0))
+
+(define dx 0.0000001)
+
+(define (deriv g)
+  (lambda (x)
+    (/ (- (g (+ x dx)) (g x))
+       dx)))
+
+(define (newton-transfrom g)
+  (lambda (x)
+    (- x (/ (g x) ((deriv g) x)))))
+
+(define (newtons-method g guess)
+  (fixed-point (newton-transfrom g) guess))
+
+(define (fixed-point-of-transform g transform guess)
+  (fixed-point (transform g) guess))
