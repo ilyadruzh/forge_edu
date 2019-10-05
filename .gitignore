@@ -9,3 +9,4 @@ bin/
 *.lib
 /Debug/
 Cargo.lock
+*.beam
