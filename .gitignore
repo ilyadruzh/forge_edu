@@ -10,3 +10,4 @@ bin/
 /Debug/
 Cargo.lock
 *.beam
+sicp/racket/.idea/
