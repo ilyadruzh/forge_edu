@@ -7,10 +7,7 @@ defmodule Solution do
       |> Enum.map(&String.to_integer/1)
 
     {head, tail} = Enum.split(n, 1)
-    # # IO.inspect(tail) # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    Enum.map(tail, fn x -> List.duplicate(x, List.first(head)) end)
-    |> List.flatten()
-    |> Enum.each(fn x -> IO.puts(x) end)
+    Enum.filter(tail, fn x -> x < List.first(head) end) |> Enum.each(fn x -> IO.puts(x) end)
   end
 end
 
