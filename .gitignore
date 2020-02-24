@@ -11,3 +11,4 @@ bin/
 Cargo.lock
 *.beam
 sicp/racket/.idea/
+kernighan-ritchie/a.out
