@@ -16,6 +16,7 @@ int main()
     // wharValueHaveGetCharEOF();
     // printEOF();
     // changeSymbols();
+    eachWordOnNewLine();
     return 0;
 }
 
@@ -132,19 +133,11 @@ void worldCount()
 void eachWordOnNewLine()
 {
     int c, nl, nw, nc, state;
-    state = OUT;
-    nl = nw = nc = 0;
 
     while ((c = getchar()) != EOF)
     {
         if (c == ' ' || c == '\n' || c == '\t')
-            state = OUT;
-        else
-        {
-            state = IN;
-            ++nw;
-        }
+            c = '\n';
+        printf("%c", c);
     }
-
-    printf("%d %d %d\n", nl, nw, nc);
 }
