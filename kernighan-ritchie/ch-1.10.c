@@ -80,7 +80,8 @@ void detab(char s[])
 
     int result_len = 0;
 
-    for (int i = 0; i < MAXLINE - 1; ++i)
+    // stack smashing detected ***: <unknown> terminated
+    for (int i = 0; i < MAXLINE - 5; ++i)
     {
         if (s[i] == '\t')
         {
@@ -100,7 +101,6 @@ void detab(char s[])
 
     printf("s: %s\n", s);
     printf("result: %s\n", result);
-    // stack smashing detected ***: <unknown> terminated
 }
 
 void entab(char s[])
