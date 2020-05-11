@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define ARRAY_LEN_A 1000
-#define ARRAY_LEN_B 100
+#define ARRAY_LEN_A 10
+#define ARRAY_LEN_B 10
 #define ARRAY_LEN_C 10
 
 void solution_a(void);
@@ -24,8 +24,10 @@ void solution_a()
     int acc = 1;
 
     for (int a = 0; a < ARRAY_LEN_A - 1; ++a)
+    {
         array[a] = rand() % 20;
-
+        printf("%d ", array[a]);
+    }
     for (int b = 0; b < ARRAY_LEN_A - 1; ++b)
         if (array[b] % 2 != 0)
             acc = acc * array[b];
@@ -40,11 +42,14 @@ void solution_b()
     int max, min;
     int max_idx, min_idx = 0;
     int count = 0;
+    printf("\n");
 
     for (int a = 0; a < ARRAY_LEN_B - 1; ++a)
     {
         array[a] = rand() % 100;
+        printf("%d ", array[a]);
     }
+
     max = min = array[0];
 
     for (int b = 0; b < ARRAY_LEN_B - 1; ++b)
@@ -66,7 +71,7 @@ void solution_b()
     else
         count = min_idx - max_idx;
 
-    printf("2. Количество элементов массива, расположенных между min и max элементами: %d\n", count);
+    printf("\n2. Количество элементов массива, расположенных между min и max элементами: %d\n", count - 1);
     printf("Индекс максимального элемента: %d\n", max_idx);
     printf("Индекс минимального элемента: %d\n", min_idx);
 }
@@ -77,7 +82,7 @@ void solution_c()
     int array_new[ARRAY_LEN_C];
     int counter = 0;
 
-    printf("3. Поменять порядок следования элементов в массиве\n");
+    printf("\n3. Поменять порядок следования элементов в массиве\n");
     printf("array_old: ");
 
     for (int a = 0; a < ARRAY_LEN_C - 1; ++a)
