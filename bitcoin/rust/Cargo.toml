@@ -1,7 +1,0 @@
-[package]
-name = "rust-bitcoin"
-version = "0.1.0"
-authors = ["Eliot Krone <krondev@pm.me>"]
-edition = "2018"
-
-[dependencies]
