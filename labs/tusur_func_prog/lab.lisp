@@ -8,6 +8,16 @@
 ;; Проверка задания 1
 (summa_digits 123)
 
+;; Задание 1
+(defun summa (n)
+        (apply '+ (map 'list #'digit-char-p (prin1-to-string n)))
+)
+
+;; Проверка задания 1
+(summa 123)
+
+;; берем первый элемент списка и складываем его с summ()
+
 ;; Задание 2 
 (defun f (s)
         
@@ -18,8 +28,14 @@
                 (cond ((null lst) nil)
                         ((numberp (car lst)) (cons (- (car lst)) (neg-list (cdr lst))))
                         (t (cons (neg-list (car lst)) (neg-list (cdr lst)))))))
+
+        (labels ((neg-pos (lst)
+                (cond ((null lst) ())
+                        ((every #'plusp lst) lst)
+                        ((minusp (car lst)) (cons (car lst) (neg-pos (cdr lst))))
+                        (t (neg-pos (append (cdr lst) (list (car lst))))))))
          
-         (sort (neg-list (flatten s)) #'<)))
+        (neg-pos (neg-list (flatten s))))))
 )
 
 ;; Проверка задания 2
@@ -29,8 +45,8 @@
 (defun f (s)
   (cond ((null s) nil)
         ((numberp (car s)) (cons (- (car s)) (f (cdr s))))
-        (t (cons (f (car s)) (f (cdr s)))))
+        (t (cons (funcall 'f (car s)) (funcall 'f (cdr s)))))
 )
 
 ;; Проверка задания 3
-(f '(4 -8 6 (4 -8 6 -9 -7) -9 -2 4 5))
+(funcall 'f '(4 -8 6 (4 -8 6 -9 -7) -9 -2 4 5))
