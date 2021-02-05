@@ -1,6 +1,6 @@
 // #include <iostream>
-#include <math.h>
 #include <stdio.h>
+#include <math.h>
 
 double cos(double a);
 float cosf(float a);
