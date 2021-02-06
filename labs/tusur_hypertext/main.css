@@ -1,0 +1,114 @@
+html,
+body {
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: #ffe2b8
+}
+
+.hexagon-animation {
+   width: 100px;
+   height: 55px;
+   background: red;
+   position: relative;
+   animation-name: translating;
+   animation-duration: 2s;
+   animation-iteration-count: 10;
+   animation-timing-function: linear;
+}
+
+.hexagon-animation:before {
+   content: "";
+   position: absolute;
+   top: -25px;
+   left: 0;
+   width: 0;
+   height: 0;
+   border-left: 50px solid transparent;
+   border-right: 50px solid transparent;
+   border-bottom: 25px solid red;
+}
+
+.hexagon-animation:after {
+   content: "";
+   position: absolute;
+   bottom: -25px;
+   left: 0;
+   width: 0;
+   height: 0;
+   border-left: 50px solid transparent;
+   border-right: 50px solid transparent;
+   border-top: 25px solid red;
+}
+
+@keyframes translating {
+   from {
+      bottom: 0px;
+      left: 0px;
+   }
+
+   25% {
+      bottom: 290px;
+      left: 0px;
+   }
+
+   50% {
+      bottom: 290px;
+      left: 290px;
+   }
+
+   75% {
+      bottom: 0px;
+      left: 290px;
+   }
+
+   to {
+      bottom: 0px;
+      left: 0px;
+   }
+}
+
+.hexagon-transition {
+   width: 100px;
+   height: 55px;
+   background: blue;
+   position: relative;
+   offset-path: path('M10 10 H 180 V 180 H 10 Z');
+   /* offset-path: margin-box; */
+   offset-distance: 0%;
+   transition-property: offset-distance;
+   transition-duration: 20s;
+   transition-timing-function: linear;
+}
+
+.hexagon-transition:before {
+   content: "";
+   position: absolute;
+   top: -25px;
+   left: 0;
+   width: 0;
+   height: 0;
+   border-left: 50px solid transparent;
+   border-right: 50px solid transparent;
+   border-bottom: 25px solid blue;
+}
+
+.hexagon-transition:after {
+   content: "";
+   position: absolute;
+   bottom: -25px;
+   left: 0;
+   width: 0;
+   height: 0;
+   border-left: 50px solid transparent;
+   border-right: 50px solid transparent;
+   border-top: 25px solid blue;
+}
+
+.hexagon-transition:hover {
+   offset-distance: 1000%;
+}
