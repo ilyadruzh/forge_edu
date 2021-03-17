@@ -1,5 +1,5 @@
 [package]
-name = "rust"
+name = "rust_crypto"
 version = "0.1.0"
 authors = ["Ilya Druzhinin <ilya.druzh@gmail.com>"]
 edition = "2018"
