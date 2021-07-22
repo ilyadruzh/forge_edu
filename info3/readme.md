@@ -1,0 +1,1 @@
+sort -n ex12.txt -o ex12-sorted.txt
